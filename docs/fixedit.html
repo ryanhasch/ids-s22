@@ -195,6 +195,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-receiving-the-following-error-when-trying-to-build-the-jupyter-book">
+   4.1. Problem: Receiving the following error when trying to build the Jupyter Book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solution-update-your-packages">
+   4.2. Solution: Update your packages
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -207,6 +225,24 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-receiving-the-following-error-when-trying-to-build-the-jupyter-book">
+   4.1. Problem: Receiving the following error when trying to build the Jupyter Book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solution-update-your-packages">
+   4.2. Solution: Update your packages
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -221,6 +257,23 @@ others. A Google search for the quoted error message may lead to an
 existing solution.</p>
 <p>This is a collection of questions and answers during this semester,
 which could be helpful for others with the same problems.</p>
+<hr class="docutils" />
+<div class="section" id="problem-receiving-the-following-error-when-trying-to-build-the-jupyter-book">
+<h2><span class="section-number">4.1. </span>Problem: Receiving the following error when trying to build the Jupyter Book<a class="headerlink" href="#problem-receiving-the-following-error-when-trying-to-build-the-jupyter-book" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>TypeError: asdict() got an unexpected keyword argument ‘value_serializer’</p>
+</div></blockquote>
+</div>
+<div class="section" id="solution-update-your-packages">
+<h2><span class="section-number">4.2. </span>Solution: Update your packages<a class="headerlink" href="#solution-update-your-packages" title="Permalink to this headline">¶</a></h2>
+<p>The solution that worked for me came from this forum: <a class="reference external" href="https://githubhelp.com/executablebooks/sphinx-external-toc/issues/49">https://githubhelp.com/executablebooks/sphinx-external-toc/issues/49</a>. In the forum, it’s suggested that the package “sphinx-external-toc” may be outdated and the current version does not meet the requirements to build the book.
+To solve this, you can use pip to update this package. Enter the following into the command line:</p>
+<blockquote>
+<div><p>pip install –upgrade sphinx-external-toc</p>
+</div></blockquote>
+<p>In my case I had to use pip3 install, but the idea should be the same. Then, run “jb build .” again and the book should build without error. This solution worked for me so hopefully it works for anyone else who runs into this error!</p>
+<hr class="docutils" />
+</div>
 </div>
 
     <script type="text/x-thebe-config">
