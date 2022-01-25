@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Preface &#8212; Introduction to Data Science, Spring 2022</title>
+    <title>4. I Fixed It &#8212; Introduction to Data Science, Spring 2022</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Introduction" href="intro.html" />
+    <link rel="prev" title="3. Exercises" href="exercises.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -88,7 +88,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    1. Introduction
@@ -104,8 +104,8 @@
    3. Exercises
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fixedit.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    4. I Fixed It
   </a>
  </li>
@@ -148,9 +148,12 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../_sources/docs/fixedit.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/index.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/fixedit.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -170,34 +173,28 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/statds/ids-s22/master?urlpath=tree/notes/docs/fixedit.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Preface
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#i-understand">
-   I Understand
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jump-start">
-   Jump Start
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -205,87 +202,25 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Preface</h1>
+                <h1>I Fixed It</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Preface
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#i-understand">
-   I Understand
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jump-start">
-   Jump Start
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="preface">
-<h1>Preface<a class="headerlink" href="#preface" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The notes are a joint effort of the instructor and the students in
-STAT 5255, Spring 2022, through experimental learning.</p>
-</div>
-<p>These notes are built using Jupyter Book 2.0.</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="i-understand">
-<h1>I Understand<a class="headerlink" href="#i-understand" title="Permalink to this headline">¶</a></h1>
-<p>Dr. Nicholas Eubank taught data science at Duke with the following
-style:</p>
-<blockquote>
-<div><p>Data science is an applied discipline, and so this will be an
-intensely applied class with lots of hands-on exercises.</p>
-<p>To make it possible for us to work through problems together as they
-arise, we will dedicate most of our class time to completing these
-exercises in small groups. That means that students will be required
-to read instructional material before every class so they will be
-ready to do these exercises. This is what is referred to as ``flipping
-the classroom.”</p>
-<p>In order to make this class organization work, it will be critically
-important that students do their assigned readings before every class,
-and as discussed below, this will be reflected in how grades are
-assigned in this class. Students who do not complete their assigned
-readings and tutorials before each class should not expect to receive
-good grades, regardless of performance on project assignments.</p>
-</div></blockquote>
-<p>Here at UConn, instead of a ‘flipped’ class, we co-develop the
-classnotes, take turns to present topics of interest, and learn from
-one another.</p>
-<p>The classnotes from Fall 2021 are here:
-<a class="reference external" href="https://github.com/jun-yan/ids">https://github.com/jun-yan/ids</a></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="jump-start">
-<h1>Jump Start<a class="headerlink" href="#jump-start" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>Command line jump start from Dr. Eubank:
-<a class="reference external" href="https://www.practicaldatascience.org/html/command_line_part1.html">Basics</a>;
-<a class="reference external" href="https://www.practicaldatascience.org/html/command_line_part2.html">Advanced</a>.</p></li>
-<li><p><a class="reference external" href="https://www.practicaldatascience.org/html/git_and_github.html">Git and GitHub</a> from Dr. Eubank</p></li>
-<li><p><a class="reference external" href="https://jupyterbook.org/intro.html">Writing a book with Jupyter</a></p></li>
-<li><p><a class="reference external" href="https://jupyterbook.org/file-types/myst-notebooks.html">MyST notebook with Jupytext</a></p></li>
-</ul>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="i-fixed-it">
+<span id="fixedit"></span><h1><span class="section-number">4. </span>I Fixed It<a class="headerlink" href="#i-fixed-it" title="Permalink to this headline">¶</a></h1>
+<p>When something does not work as expected, be sure to read the error
+message carefully. Oftentimes, the problem has been encountered by
+others. A Google search for the quoted error message may lead to an
+existing solution.</p>
+<p>This is a collection of questions and answers during this semester,
+which could be helpful for others with the same problems.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -312,13 +247,13 @@ one another.</p>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="intro.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Introduction</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="exercises.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Exercises</p>
+        </div>
     </a>
 </div>
             
