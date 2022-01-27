@@ -211,8 +211,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solution-update-your-packages">
-     4.1.2. Solution: Update your packages
+    <a class="reference internal nav-link" href="#solution-upgrade-a-package">
+     4.1.2. Solution: Upgrade a package
     </a>
    </li>
   </ul>
@@ -248,8 +248,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solution-update-your-packages">
-     4.1.2. Solution: Update your packages
+    <a class="reference internal nav-link" href="#solution-upgrade-a-package">
+     4.1.2. Solution: Upgrade a package
     </a>
    </li>
   </ul>
@@ -279,14 +279,22 @@ which could be helpful for others with the same problems.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="solution-update-your-packages">
-<h3><span class="section-number">4.1.2. </span>Solution: Update your packages<a class="headerlink" href="#solution-update-your-packages" title="Permalink to this headline">¶</a></h3>
-<p>The solution that worked for me came from this forum: <a class="reference external" href="https://githubhelp.com/executablebooks/sphinx-external-toc/issues/49">https://githubhelp.com/executablebooks/sphinx-external-toc/issues/49</a>. In the forum, it’s suggested that the package “sphinx-external-toc” may be outdated and the current version does not meet the requirements to build the book.
-To solve this, you can use pip to update this package. Enter the following into the command line:</p>
+<div class="section" id="solution-upgrade-a-package">
+<h3><span class="section-number">4.1.2. </span>Solution: Upgrade a package<a class="headerlink" href="#solution-upgrade-a-package" title="Permalink to this headline">¶</a></h3>
+<p>The solution that worked for me came from this forum:
+<a class="reference external" href="https://githubhelp.com/executablebooks/sphinx-external-toc/issues/49">https://githubhelp.com/executablebooks/sphinx-external-toc/issues/49</a>.
+In the forum, it’s suggested that the package <code class="docutils literal notranslate"><span class="pre">sphinx-external-toc</span></code>
+may be outdated and the current version does not meet the requirements
+to build the book.</p>
+<p>To solve this, you can use pip to update this package. Enter the
+following into the command line:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install --upgrade sphinx-external-toc
 </pre></div>
 </div>
-<p>In my case I had to use pip3 install, but the idea should be the same. Then, run “jb build .” again and the book should build without error. This solution worked for me so hopefully it works for anyone else who runs into this error!</p>
+<p>In my case I had to use pip3 install, but the idea should be the
+same. Then, run <code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">.</span></code> again and the book should build without
+error. This solution worked for me so hopefully it works for anyone
+else who runs into this error!</p>
 </div>
 </div>
 </div>
