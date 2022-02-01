@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. Exercises &#8212; Introduction to Data Science, Spring 2022</title>
+    <title>4.2. Basemap &#8212; Introduction to Data Science, Spring 2022</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6. I Fixed It" href="fixedit.html" />
-    <link rel="prev" title="4.2. Basemap" href="basemap.html" />
+    <link rel="next" title="5. Exercises" href="exercises.html" />
+    <link rel="prev" title="4.1. Matplotlib" href="matplotlib.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -107,30 +105,30 @@
    3. Python Refreshment
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="visual.html">
    4. Visualization
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="matplotlib.html">
      4.1. Matplotlib
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="basemap.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      4.2. Basemap
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercises.html">
    5. Exercises
   </a>
  </li>
@@ -179,11 +177,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="../_sources/docs/exercises.ipynb"><button type="button"
+            href="../_sources/docs/basemap.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/exercises.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/basemap.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -208,7 +206,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/statds/ids-s22/master?urlpath=tree/notes/docs/exercises.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/statds/ids-s22/master?urlpath=tree/notes/docs/basemap.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -232,7 +230,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exercises</h1>
+                <h1>Basemap</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -243,25 +241,12 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="exercises">
-<span id="id1"></span><h1><span class="section-number">5. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
-<ol class="simple">
-<li><p>Write a function to demonstrate the Monty Hall problem through
-simulation. The function takes two arguments <code class="docutils literal notranslate"><span class="pre">ndoors</span></code> and
-<code class="docutils literal notranslate"><span class="pre">ntrials</span></code>, representing the number of doors in the experiment and
-the number of trails in a simulation, respectively. The function
-should return the proportion of wins for both the switch and
-no-switch strategy. Apply your function with 3 doors and 5 doors,
-both with 1000 trials.</p></li>
-<li><p>Write a function to do a Monte Carlo approximation of <span class="math notranslate nohighlight">\(\pi\)</span>. The
-function takes a Monte Carlo sample size <code class="docutils literal notranslate"><span class="pre">n</span></code> as input, and returns
-a point estimate of <span class="math notranslate nohighlight">\(\pi\)</span> and a 95% confidence interval. Apply your
-function with sample size 1000, 2000, 4000, and 8000. Comment on
-the results.</p></li>
-<li><p>Find the first 10-digit prime number occurring in consecutive
-digits of <span class="math notranslate nohighlight">\(e\)</span>. This was a
-<a class="reference external" href="http://mathworld.wolfram.com/news/2004-10-13/google/">Google recruiting ad</a>.</p></li>
-</ol>
+  <div class="tex2jax_ignore mathjax_ignore section" id="basemap">
+<span id="id1"></span><h1><span class="section-number">4.2. </span>Basemap<a class="headerlink" href="#basemap" title="Permalink to this headline">¶</a></h1>
+<p>An executive summary … its functions … authors … and history …</p>
+<p>Use the NYC MV Collisons-Crashes data to demonstrate …</p>
+<p>Think of questions of interest that can be answered by visualization
+…</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -289,17 +274,17 @@ digits of <span class="math notranslate nohighlight">\(e\)</span>. This was a
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="basemap.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="matplotlib.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4.2. </span>Basemap</p>
+            <p class="prev-next-title"><span class="section-number">4.1. </span>Matplotlib</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="fixedit.html" title="next page">
+    <a class='right-next' id="next-link" href="exercises.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>I Fixed It</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Exercises</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

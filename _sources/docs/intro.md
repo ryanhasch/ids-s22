@@ -128,6 +128,9 @@ order). Add yours; note the syntax of nested list in Markdown.
     - Learn the fundamentals of data science
     - Become more comfortable with command line interface
     - Work on a data science project involving a meaningful topic
++ Campman, Benjamin
+    - Develop more concrete ability and knowledge of Python
+    - Understand basics of Git
 + Hughes, Sam
     - Become comfortable with git
     - Learn data visualization techniques in Python
@@ -137,17 +140,6 @@ order). Add yours; note the syntax of nested list in Markdown.
     - Improve my comfort level with Python.
     - Explore data visualization tools available in Python.
     - Become proficient in git.
-+ Taffe, Thalia
-    - Better understand cmd functionality
-+ Yan, Jun
-    - Make data science accessible to undergraduates
-    - Co-develop a notebook with Jupyter-book in collaboration with students
-+ Zeimbekakis, Anthony
-    - Become proficient in using command line with tools such as GitHub or even just file management
-    - Apply past knowledge of Python to be comfortable performing data science tasks
-+ Campman, Benjamin
-    - Develop more concrete ability and knowledge of Python
-    - Understand basics of Git
 + Shamirian, Robbie
     - Continue to grow my Python skills in relation to data science
     - Understand the fundamentals of Git
@@ -155,10 +147,18 @@ order). Add yours; note the syntax of nested list in Markdown.
 	- Become adept at using Git and GitHub for projects
 	- Become more comfortable with using Python
 	- Learn data analysis and visualization techniques using Python
++ Taffe, Thalia
+    - Better understand cmd functionality
 + Xu, Zhenyu
     - Get familiar with Git and Github like a professional data scientist
     - Learn more Python skills
     - Participate in a practical data science competition
++ Yan, Jun
+    - Make data science accessible to undergraduates
+    - Co-develop a notebook with Jupyter-book in collaboration with students
++ Zeimbekakis, Anthony
+    - Become proficient in using command line with tools such as GitHub or even just file management
+    - Apply past knowledge of Python to be comfortable performing data science tasks
 
 ## Task Board
 
@@ -174,7 +174,8 @@ order). Add yours; note the syntax of nested list in Markdown.
     - Unrestricted
     - Restricted
 + Visualization
-    - Package matplotlib
+    - Package matplotlib (Tu, Feb. 8)
+    - Package basemap (Th, Feb. 10)
     - Package seaborn
 + Statistical tests and models
     - Hypothesis tests
@@ -198,6 +199,22 @@ order). Add yours; note the syntax of nested list in Markdown.
 + [ASA Data Challenge
   Expo](https://community.amstat.org/dataexpo/home)
 
-```{code-cell} ipython3
+## NYC Open Data Week Event
 
-```
+### My Proposal Was Accepted
+The NYC Open Data provides opportunities for data scientists to
+demonstrate what data science can do in real life. Students taking
+Introduction to Data Science (STAT3255/5255) in Spring 2022 at UConn
+are required to work on a project of their choice with any dataset on
+NYC Open Data. The topics will be a mix of instructor recommendations
+and self selections, covering transportation, construction, education,
+finance, and health, among others. Examples are the motor vehicle
+collisions crashes; DOB job application filling. NYC leading causes of
+death. and for students in data science. data science education. Five
+students will be selected from the class to present their works in a
+virtual panel. The presented project will be made public in
+crowd-sourced open class notes, facilitating real-life open data
+projects in data science education.
+
+### Dates 
+Tuesday, March 8, 2022 or Thursday, March 10, 2022

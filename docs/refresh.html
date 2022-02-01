@@ -53,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Exercises" href="exercises.html" />
+    <link rel="next" title="4. Visualization" href="visual.html" />
     <link rel="prev" title="2. Project Management" href="prman.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -107,14 +107,36 @@
    3. Python Refreshment
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="visual.html">
+   4. Visualization
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matplotlib.html">
+     4.1. Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basemap.html">
+     4.2. Basemap
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="exercises.html">
-   4. Exercises
+   5. Exercises
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fixedit.html">
-   5. I Fixed It
+   6. I Fixed It
   </a>
  </li>
 </ul>
@@ -223,6 +245,28 @@
    3.3. Variables versus Objects
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#number-representation">
+   3.4. Number Representation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integers">
+     3.4.1. Integers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#floating-number">
+     3.4.2. Floating Number
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-importation">
+   3.5. Data Importation
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -256,6 +300,28 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variables-versus-objects">
    3.3. Variables versus Objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#number-representation">
+   3.4. Number Representation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integers">
+     3.4.1. Integers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#floating-number">
+     3.4.2. Floating Number
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-importation">
+   3.5. Data Importation
   </a>
  </li>
 </ul>
@@ -479,6 +545,149 @@ the function.</p>
 </div>
 <p>Note that both <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> have been appended by <span class="math notranslate nohighlight">\(42\)</span>.</p>
 </div>
+<div class="section" id="number-representation">
+<h2><span class="section-number">3.4. </span>Number Representation<a class="headerlink" href="#number-representation" title="Permalink to this headline">¶</a></h2>
+<p>Numers in a computer’s memory are represented by binary styles (on and
+off of bits).</p>
+<div class="section" id="integers">
+<h3><span class="section-number">3.4.1. </span>Integers<a class="headerlink" href="#integers" title="Permalink to this headline">¶</a></h3>
+<p>If not careful, It is easy to be bitten by overflow with integers when
+using Numpy and Pandas in Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">63</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="n">x</span>
+<span class="c1"># This should be the largest number numpy can display, with</span>
+<span class="c1"># the default int8 type (64 bits)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What if we increment it by 1?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="n">y</span>
+<span class="c1"># Because of the overflow, it becomes negative!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For vanilla Python, the overflow errors are checked and more digits
+are allocated when needed, at the cost of being slow.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">63</span> <span class="o">*</span> <span class="mi">1000</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>This number is 1000 times largger than the prior number,
+but still displayed perfectly without any overflows</p>
+</div>
+<div class="section" id="floating-number">
+<h3><span class="section-number">3.4.2. </span>Floating Number<a class="headerlink" href="#floating-number" title="Permalink to this headline">¶</a></h3>
+<p>Standard double-precision floating point number uses 64 bits. Among
+them, 1 is for sign, 11 is for exponent, and 52 are fraction significand,
+See <a class="reference external" href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">https://en.wikipedia.org/wiki/Double-precision_floating-point_format</a>.
+The bottom line is that, of course, not every real number is exactly
+representable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">==</span> <span class="mf">0.3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.3</span> <span class="o">-</span> <span class="mf">0.2</span> <span class="o">==</span> <span class="mf">0.1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is really going on?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">decimal</span>
+<span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because the mantissa bits are limited, it can not represent a floating point
+that’s both very big and very precise. Most computers can represent all integers
+up to <span class="math notranslate nohighlight">\(2^53\)</span>, after that it starts skipping numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">2.1</span><span class="o">**</span><span class="mi">53</span> <span class="o">+</span><span class="mi">1</span> <span class="o">==</span> <span class="mf">2.1</span><span class="o">**</span><span class="mi">53</span>
+
+<span class="c1"># Find a number larger than 2 to the 53rd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.1</span><span class="o">**</span><span class="mi">53</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">x</span> <span class="o">==</span> <span class="mf">2.1</span><span class="o">**</span><span class="mi">53</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We add 1 to <code class="docutils literal notranslate"><span class="pre">x</span></code> by 1000000 times, but it still equal to its initial
+value,  2.1**53. This is because this number is too big that computer
+can’t handle it with precision like add 1.</p>
+<p>Machine epsilon is the smallest positive floating-point number <code class="docutils literal notranslate"><span class="pre">x</span></code> such that
+<code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">x</span> <span class="pre">!=</span> <span class="pre">1</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-importation">
+<h2><span class="section-number">3.5. </span>Data Importation<a class="headerlink" href="#data-importation" title="Permalink to this headline">¶</a></h2>
+<p>NYC Open Data is great resource of open data. One specific dataset of
+interest is the <a class="reference external" href="https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95">Motor Vehicle
+Collisons-Crashes</a>.</p>
+<blockquote>
+<div><p>The Motor Vehicle Collisions crash table contains details on the
+crash event. Each row represents a crash event. The Motor Vehicle
+Collisions data tables contain information from all police reported
+motor vehicle collisions in NYC. The police report (MV104-AN) is
+required to be filled out for collisions where someone is injured or
+killed, or where there is at least $1000 worth of damage</p>
+</div></blockquote>
+<p>The data is big. I only downloaded the data from January 1 to 25,
+2022.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">nyc_crash</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/nyc_mv_collisons_202201.csv&quot;</span><span class="p">)</span>
+<span class="n">nyc_crash</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are 29 variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nyc_crash</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -513,10 +722,10 @@ the function.</p>
             <p class="prev-next-title"><span class="section-number">2. </span>Project Management</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="exercises.html" title="next page">
+    <a class='right-next' id="next-link" href="visual.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Exercises</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Visualization</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
