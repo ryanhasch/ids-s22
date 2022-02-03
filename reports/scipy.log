@@ -17,23 +17,30 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from scipy.stats import norm
+from scipy.stats import genextreme
 
-mu, sigma = 2, 4
-mean, var, skew, kurt = norm.stats(mu, sigma, moments='mvsk')
-print(mean, var, skew, kurt)
-x = norm.rvs(loc = mu, scale = sigma, size = 10)
-x
+xi = -0.2
+n  = 10 
+## a random sample of size n
+x = genextreme.rvs(xi, size = n)
+## density
+genextreme.pdf(x, c = xi)
+genextreme.logpdf(x, c = xi) # for loglikelihood
+## distribution
+genextreme.cdf(x, c = xi)
+genextreme.logcdf(x, c = xi) # for loglikelihood
+## quantile
+genextreme.ppf(genextreme.cdf(x, c = xi), c = xi) == x
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1716/2094623002.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mfrom[0m [0mscipy[0m[0;34m.[0m[0mstats[0m [0;32mimport[0m [0mnorm[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_1770/751162543.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mfrom[0m [0mscipy[0m[0;34m.[0m[0mstats[0m [0;32mimport[0m [0mgenextreme[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      2[0m [0;34m[0m[0m
-[1;32m      3[0m [0mmu[0m[0;34m,[0m [0msigma[0m [0;34m=[0m [0;36m2[0m[0;34m,[0m [0;36m4[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m [0mmean[0m[0;34m,[0m [0mvar[0m[0;34m,[0m [0mskew[0m[0;34m,[0m [0mkurt[0m [0;34m=[0m [0mnorm[0m[0;34m.[0m[0mstats[0m[0;34m([0m[0mmu[0m[0;34m,[0m [0msigma[0m[0;34m,[0m [0mmoments[0m[0;34m=[0m[0;34m'mvsk'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0mprint[0m[0;34m([0m[0mmean[0m[0;34m,[0m [0mvar[0m[0;34m,[0m [0mskew[0m[0;34m,[0m [0mkurt[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0mxi[0m [0;34m=[0m [0;34m-[0m[0;36m0.2[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mn[0m  [0;34m=[0m [0;36m10[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0;31m## a random sample of size n[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 
 [0;31mModuleNotFoundError[0m: No module named 'scipy'
 ModuleNotFoundError: No module named 'scipy'
