@@ -28,10 +28,12 @@ x
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [0;32mIn [3][0m, in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mstats[39;00m [38;5;28;01mimport[39;00m norm
-[1;32m      3[0m mu, sigma [38;5;241m=[39m [38;5;241m2[39m, [38;5;241m4[39m
-[1;32m      4[0m mean, var, skew, kurt [38;5;241m=[39m norm[38;5;241m.[39mstats(mu, sigma, moments[38;5;241m=[39m[38;5;124m'[39m[38;5;124mmvsk[39m[38;5;124m'[39m)
+[0;32m/tmp/ipykernel_1747/2094623002.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mfrom[0m [0mscipy[0m[0;34m.[0m[0mstats[0m [0;32mimport[0m [0mnorm[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0;34m[0m[0m
+[1;32m      3[0m [0mmu[0m[0;34m,[0m [0msigma[0m [0;34m=[0m [0;36m2[0m[0;34m,[0m [0;36m4[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mmean[0m[0;34m,[0m [0mvar[0m[0;34m,[0m [0mskew[0m[0;34m,[0m [0mkurt[0m [0;34m=[0m [0mnorm[0m[0;34m.[0m[0mstats[0m[0;34m([0m[0mmu[0m[0;34m,[0m [0msigma[0m[0;34m,[0m [0mmoments[0m[0;34m=[0m[0;34m'mvsk'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0mprint[0m[0;34m([0m[0mmean[0m[0;34m,[0m [0mvar[0m[0;34m,[0m [0mskew[0m[0;34m,[0m [0mkurt[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
 [0;31mModuleNotFoundError[0m: No module named 'scipy'
 ModuleNotFoundError: No module named 'scipy'
