@@ -112,9 +112,14 @@
    4. SciPy for Data Science
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   5. Data Manipulation with Pandas
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="visual.html">
-   5. Visualization
+   6. Visualization
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -124,29 +129,29 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="matplotlib.html">
-     5.1. Matplotlib: Visualization with Python
+     6.1. Matplotlib: Visualization with Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="basemap.html">
-     5.2. Basemap
+     6.2. Basemap
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="cartopy.html">
-     5.3. Cartopy
+     6.3. Cartopy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="exercises.html">
-   6. Exercises
+   7. Exercises
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fixedit.html">
-   7. I Fixed It
+   8. I Fixed It
   </a>
  </li>
 </ul>
@@ -368,15 +373,9 @@ libratry</a>.</p>
 <p>The constant is only represented by a given double precision.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%0.20f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%0.80f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.71828182845904509080
-2.71828182845904509079559829842764884233474731445312500000000000000000000000000000
 </pre></div>
 </div>
 </div>
@@ -384,7 +383,7 @@ libratry</a>.</p>
 <p>Now use package <code class="docutils literal notranslate"><span class="pre">decimal</span></code> to export with an arbitary precision.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">decimal</span>  <span class="c1"># for what?</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">decimal</span>  <span class="c1"># for what?</span>
 
 <span class="c1">## set the required number digits to 150</span>
 <span class="n">decimal</span><span class="o">.</span><span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span> <span class="o">=</span> <span class="mi">150</span>
@@ -393,17 +392,12 @@ libratry</a>.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;71828182845904523536028747135266249775724709369995957496696762772407663035354759457138217852516642742746639193200305992181741359662904357290033429526&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Question: how to draw a random sample from a normal distribution and
 evaluate the density and distributions at these points?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
 
 <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span>
 <span class="n">mean</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">skew</span><span class="p">,</span> <span class="n">kurt</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">moments</span><span class="o">=</span><span class="s1">&#39;mvsk&#39;</span><span class="p">)</span>
@@ -413,26 +407,11 @@ evaluate the density and distributions at these points?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0 16.0 0.0 0.0
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4.01387432,  2.27225296,  8.33891967, -0.61973009,  1.96311172,
-        4.15575787,  1.55359887,  2.35510071,  2.72553567,  3.94549841])
-</pre></div>
-</div>
-</div>
 </div>
 <p>The pdf and cdf can be evaluated:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">mu</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.08786329, 0.09950482, 0.02841275, 0.08048365, 0.09973133,
-       0.08625383, 0.09911642, 0.09934333, 0.09810833, 0.08860978])
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">mu</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -447,18 +426,13 @@ We are going to use 3 ways to solve the problems.</p>
 <p>The first is a recursive solution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib_rs</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib_rs</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">n</span><span class="o">==</span><span class="mi">2</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">fib_rs</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib_rs</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="o">%</span><span class="k">timeit</span> fib_rs(10)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.1 µs ± 14.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<span class="o">%</span><span class="n">timeit</span> <span class="n">fib_rs</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -466,7 +440,7 @@ We are going to use 3 ways to solve the problems.</p>
 <p>The second uses dynamic programming memoization.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib_dm_helper</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">mem</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib_dm_helper</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">mem</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">mem</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">mem</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
     <span class="k">elif</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">):</span>
@@ -480,12 +454,7 @@ We are going to use 3 ways to solve the problems.</p>
     <span class="n">mem</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">fib_dm_helper</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">mem</span><span class="p">)</span>
 
-<span class="o">%</span><span class="k">timeit</span> fib_dm(10)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.85 µs ± 1.25 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<span class="o">%</span><span class="n">timeit</span> <span class="n">fib_dm</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -493,7 +462,7 @@ We are going to use 3 ways to solve the problems.</p>
 <p>The third is still dynamic programming but bottom-up.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib_dbu</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib_dbu</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">mem</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">mem</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
     <span class="n">mem</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
@@ -502,12 +471,7 @@ We are going to use 3 ways to solve the problems.</p>
     <span class="k">return</span> <span class="n">mem</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
 
 
-<span class="o">%</span><span class="k">timeit</span> fib_dbu(500)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>72.4 µs ± 268 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<span class="o">%</span><span class="n">timeit</span> <span class="n">fib_dbu</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -524,15 +488,10 @@ those objects. This matters when multiple variables point to the same
 object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># create a list; x points to the list</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># create a list; x points to the list</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>          <span class="c1"># y also points to the same list in the memory</span>
 <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>    <span class="c1"># append to y</span>
 <span class="n">x</span>              <span class="c1"># x changed!</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4]
 </pre></div>
 </div>
 </div>
@@ -540,14 +499,8 @@ object.</p>
 <p>Now check their addresses</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>   <span class="c1"># address of x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>   <span class="c1"># address of x</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>   <span class="c1"># address of y</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140597034654272
-140597034654272
 </pre></div>
 </div>
 </div>
@@ -556,15 +509,10 @@ object.</p>
 their values cannot be changed in place. One such example is strings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
 <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;xyz&quot;</span>
 <span class="n">x</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;abc&#39;
 </pre></div>
 </div>
 </div>
@@ -572,14 +520,8 @@ their values cannot be changed in place. One such example is strings.</p>
 <p>Now check their addresses</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>   <span class="c1"># address of x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>   <span class="c1"># address of x</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>   <span class="c1"># address of y</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140597891560432
-140597506262256
 </pre></div>
 </div>
 </div>
@@ -604,7 +546,7 @@ will affect any variable that was pointing to that same object outside
 the function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
 
 <span class="k">def</span> <span class="nf">append_42</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
@@ -612,11 +554,6 @@ the function.</p>
     <span class="k">return</span> <span class="n">input_list</span>
 
 <span class="n">append_42</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 42]
 </pre></div>
 </div>
 </div>
@@ -633,7 +570,7 @@ off of bits).</p>
 using Numpy and Pandas in Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">63</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
 <span class="n">x</span>
@@ -642,23 +579,13 @@ using Numpy and Pandas in Python.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array(9223372036854775807)
-</pre></div>
-</div>
-</div>
 </div>
 <p>What if we increment it by 1?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
 <span class="n">y</span>
 <span class="c1"># Because of the overflow, it becomes negative!</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array(-9223372036854775808)
 </pre></div>
 </div>
 </div>
@@ -667,12 +594,7 @@ using Numpy and Pandas in Python.</p>
 are allocated when needed, at the cost of being slow.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">63</span> <span class="o">*</span> <span class="mi">1000</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9223372036854775808000
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">63</span> <span class="o">*</span> <span class="mi">1000</span>
 </pre></div>
 </div>
 </div>
@@ -689,24 +611,14 @@ The bottom line is that, of course, not every real number is exactly
 representable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">==</span> <span class="mf">0.3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">==</span> <span class="mf">0.3</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.3</span> <span class="o">-</span> <span class="mf">0.2</span> <span class="o">==</span> <span class="mf">0.1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.3</span> <span class="o">-</span> <span class="mf">0.2</span> <span class="o">==</span> <span class="mf">0.1</span>
 </pre></div>
 </div>
 </div>
@@ -714,13 +626,8 @@ representable.</p>
 <p>What is really going on?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">decimal</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">decimal</span>
 <span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Decimal(&#39;0.1000000000000000055511151231257827021181583404541015625&#39;)
 </pre></div>
 </div>
 </div>
@@ -730,29 +637,19 @@ that’s both very big and very precise. Most computers can represent all intege
 up to <span class="math notranslate nohighlight">\(2^{53}\)</span>, after that it starts skipping numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">2.1</span><span class="o">**</span><span class="mi">53</span> <span class="o">+</span><span class="mi">1</span> <span class="o">==</span> <span class="mf">2.1</span><span class="o">**</span><span class="mi">53</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">2.1</span><span class="o">**</span><span class="mi">53</span> <span class="o">+</span><span class="mi">1</span> <span class="o">==</span> <span class="mf">2.1</span><span class="o">**</span><span class="mi">53</span>
 
 <span class="c1"># Find a number larger than 2 to the 53rd</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.1</span><span class="o">**</span><span class="mi">53</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.1</span><span class="o">**</span><span class="mi">53</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="n">x</span> <span class="o">==</span> <span class="mf">2.1</span><span class="o">**</span><span class="mi">53</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -764,14 +661,8 @@ can’t handle it with precision like add 1.</p>
 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">x</span> <span class="pre">!=</span> <span class="pre">1</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.220446049250313e-16
-1.1920929e-07
 </pre></div>
 </div>
 </div>
@@ -795,321 +686,18 @@ killed, or where there is at least $1000 worth of damage</p>
 2022.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">nyc_crash</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/nyc_mv_collisons_202201.csv&quot;</span><span class="p">)</span>
 <span class="n">nyc_crash</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CRASH DATE</th>
-      <th>CRASH TIME</th>
-      <th>BOROUGH</th>
-      <th>ZIP CODE</th>
-      <th>LATITUDE</th>
-      <th>LONGITUDE</th>
-      <th>LOCATION</th>
-      <th>ON STREET NAME</th>
-      <th>CROSS STREET NAME</th>
-      <th>OFF STREET NAME</th>
-      <th>...</th>
-      <th>CONTRIBUTING FACTOR VEHICLE 2</th>
-      <th>CONTRIBUTING FACTOR VEHICLE 3</th>
-      <th>CONTRIBUTING FACTOR VEHICLE 4</th>
-      <th>CONTRIBUTING FACTOR VEHICLE 5</th>
-      <th>COLLISION_ID</th>
-      <th>VEHICLE TYPE CODE 1</th>
-      <th>VEHICLE TYPE CODE 2</th>
-      <th>VEHICLE TYPE CODE 3</th>
-      <th>VEHICLE TYPE CODE 4</th>
-      <th>VEHICLE TYPE CODE 5</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>01/01/2022</td>
-      <td>7:05</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>EAST 128 STREET</td>
-      <td>3 AVENUE BRIDGE</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4491172</td>
-      <td>Sedan</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>01/01/2022</td>
-      <td>14:43</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>40.769993</td>
-      <td>-73.915825</td>
-      <td>(40.769993, -73.915825)</td>
-      <td>GRAND CENTRAL PKWY</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4491406</td>
-      <td>Sedan</td>
-      <td>Sedan</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>01/01/2022</td>
-      <td>21:20</td>
-      <td>QUEENS</td>
-      <td>11414.0</td>
-      <td>40.657230</td>
-      <td>-73.841380</td>
-      <td>(40.65723, -73.84138)</td>
-      <td>91 STREET</td>
-      <td>160 AVENUE</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4491466</td>
-      <td>Sedan</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>01/01/2022</td>
-      <td>4:30</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Southern parkway</td>
-      <td>Jfk expressway</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>Unspecified</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4491626</td>
-      <td>Sedan</td>
-      <td>Sedan</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>01/01/2022</td>
-      <td>7:57</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>WESTCHESTER AVENUE</td>
-      <td>SHERIDAN EXPRESSWAY</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4491734</td>
-      <td>Sedan</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>01/01/2022</td>
-      <td>13:07</td>
-      <td>QUEENS</td>
-      <td>11373.0</td>
-      <td>40.742737</td>
-      <td>-73.876430</td>
-      <td>(40.742737, -73.87643)</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>89-22     43 AVENUE</td>
-      <td>...</td>
-      <td>Unspecified</td>
-      <td>Unspecified</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4491843</td>
-      <td>Sedan</td>
-      <td>Sedan</td>
-      <td>Station Wagon/Sport Utility Vehicle</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>01/01/2022</td>
-      <td>14:33</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>40.759945</td>
-      <td>-73.838700</td>
-      <td>(40.759945, -73.8387)</td>
-      <td>VAN WYCK EXPWY</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>Unspecified</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4491841</td>
-      <td>Sedan</td>
-      <td>Station Wagon/Sport Utility Vehicle</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>01/01/2022</td>
-      <td>6:00</td>
-      <td>BROOKLYN</td>
-      <td>11222.0</td>
-      <td>40.723910</td>
-      <td>-73.948845</td>
-      <td>(40.72391, -73.948845)</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>132       ECKFORD STREET</td>
-      <td>...</td>
-      <td>Unspecified</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4491833</td>
-      <td>Sedan</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>01/01/2022</td>
-      <td>5:17</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>40.746930</td>
-      <td>-73.848660</td>
-      <td>(40.74693, -73.84866)</td>
-      <td>GRAND CENTRAL PKWY</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>Unsafe Lane Changing</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4491857</td>
-      <td>Sedan</td>
-      <td>Sedan</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>01/01/2022</td>
-      <td>1:30</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>40.819157</td>
-      <td>-73.960380</td>
-      <td>(40.819157, -73.96038)</td>
-      <td>HENRY HUDSON PARKWAY</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4491344</td>
-      <td>Sedan</td>
-      <td>Station Wagon/Sport Utility Vehicle</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-<p>10 rows × 29 columns</p>
-</div></div></div>
 </div>
 <p>There are 29 variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nyc_crash</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;CRASH DATE&#39;, &#39;CRASH TIME&#39;, &#39;BOROUGH&#39;, &#39;ZIP CODE&#39;, &#39;LATITUDE&#39;,
-       &#39;LONGITUDE&#39;, &#39;LOCATION&#39;, &#39;ON STREET NAME&#39;, &#39;CROSS STREET NAME&#39;,
-       &#39;OFF STREET NAME&#39;, &#39;NUMBER OF PERSONS INJURED&#39;,
-       &#39;NUMBER OF PERSONS KILLED&#39;, &#39;NUMBER OF PEDESTRIANS INJURED&#39;,
-       &#39;NUMBER OF PEDESTRIANS KILLED&#39;, &#39;NUMBER OF CYCLIST INJURED&#39;,
-       &#39;NUMBER OF CYCLIST KILLED&#39;, &#39;NUMBER OF MOTORIST INJURED&#39;,
-       &#39;NUMBER OF MOTORIST KILLED&#39;, &#39;CONTRIBUTING FACTOR VEHICLE 1&#39;,
-       &#39;CONTRIBUTING FACTOR VEHICLE 2&#39;, &#39;CONTRIBUTING FACTOR VEHICLE 3&#39;,
-       &#39;CONTRIBUTING FACTOR VEHICLE 4&#39;, &#39;CONTRIBUTING FACTOR VEHICLE 5&#39;,
-       &#39;COLLISION_ID&#39;, &#39;VEHICLE TYPE CODE 1&#39;, &#39;VEHICLE TYPE CODE 2&#39;,
-       &#39;VEHICLE TYPE CODE 3&#39;, &#39;VEHICLE TYPE CODE 4&#39;, &#39;VEHICLE TYPE CODE 5&#39;],
-      dtype=&#39;object&#39;)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nyc_crash</span><span class="o">.</span><span class="n">columns</span>
 </pre></div>
 </div>
 </div>
