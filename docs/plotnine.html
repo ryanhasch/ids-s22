@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Project Management &#8212; Introduction to Data Science, Spring 2022</title>
+    <title>6.4. Plotnine &#8212; Introduction to Data Science, Spring 2022</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Python Refreshment" href="refresh.html" />
-    <link rel="prev" title="1. Introduction" href="intro.html" />
+    <link rel="next" title="7. Exercises" href="exercises.html" />
+    <link rel="prev" title="6.3. Cartopy" href="cartopy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -95,8 +95,8 @@
    1. Introduction
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="prman.html">
    2. Project Management
   </a>
  </li>
@@ -115,16 +115,16 @@
    5. Data Manipulation with Pandas
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="visual.html">
    6. Visualization
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="matplotlib.html">
      6.1. Matplotlib: Visualization with Python
@@ -140,8 +140,8 @@
      6.3. Cartopy
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plotnine.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      6.4. Plotnine
     </a>
    </li>
@@ -197,11 +197,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="../_sources/docs/prman.ipynb"><button type="button"
+            href="../_sources/docs/plotnine.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/prman.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/plotnine.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -226,7 +226,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/statds/ids-s22/master?urlpath=tree/notes/docs/prman.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/statds/ids-s22/master?urlpath=tree/notes/docs/plotnine.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -243,69 +243,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reproducible-data-science-project">
-   2.1. Reproducible Data Science Project
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-virtual-environment-for-python">
-     2.1.1. Using Virtual Environment for Python
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-jupyter-notebook">
-     2.1.2. Using Jupyter Notebook
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-python-engine-in-rmarkdown">
-     2.1.3. Using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       python
-      </span>
-     </code>
-     Engine in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       RMarkdown
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-a-git-repo">
-   2.2. Setting up a Git Repo
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#styles">
-   2.3. Styles
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#programming">
-     2.3.1. Programming
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-repo">
-     2.3.2. Git Repo
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -313,143 +250,22 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Project Management</h1>
+                <h1>Plotnine</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reproducible-data-science-project">
-   2.1. Reproducible Data Science Project
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-virtual-environment-for-python">
-     2.1.1. Using Virtual Environment for Python
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-jupyter-notebook">
-     2.1.2. Using Jupyter Notebook
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-python-engine-in-rmarkdown">
-     2.1.3. Using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       python
-      </span>
-     </code>
-     Engine in
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       RMarkdown
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-a-git-repo">
-   2.2. Setting up a Git Repo
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#styles">
-   2.3. Styles
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#programming">
-     2.3.1. Programming
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git-repo">
-     2.3.2. Git Repo
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="project-management">
-<span id="prman"></span><h1><span class="section-number">2. </span>Project Management<a class="headerlink" href="#project-management" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="reproducible-data-science-project">
-<h2><span class="section-number">2.1. </span>Reproducible Data Science Project<a class="headerlink" href="#reproducible-data-science-project" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="using-virtual-environment-for-python">
-<h3><span class="section-number">2.1.1. </span>Using Virtual Environment for Python<a class="headerlink" href="#using-virtual-environment-for-python" title="Permalink to this headline">¶</a></h3>
-<p>It is a good practice to set up and use virtual environments for Python (or R) projects.
-See a tutorial of virtual environments at <a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">Python Docs</a>.</p>
-</div>
-<div class="section" id="using-jupyter-notebook">
-<h3><span class="section-number">2.1.2. </span>Using Jupyter Notebook<a class="headerlink" href="#using-jupyter-notebook" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>File name extension <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code></p></li>
-<li><p>Separate code chunks and companion texts</p></li>
-<li><p>Test and edit until the whole notebook runs as expected</p></li>
-<li><p>Download the notebook into a pdf file (for GitHub project release)</p></li>
-</ul>
-</div>
-<div class="section" id="using-python-engine-in-rmarkdown">
-<h3><span class="section-number">2.1.3. </span>Using <code class="docutils literal notranslate"><span class="pre">python</span></code> Engine in <code class="docutils literal notranslate"><span class="pre">RMarkdown</span></code><a class="headerlink" href="#using-python-engine-in-rmarkdown" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Find a Markdown cheatsheet</p></li>
-<li><p>Install R <code class="docutils literal notranslate"><span class="pre">reticulate</span></code> package</p></li>
-<li><p>See example in <code class="docutils literal notranslate"><span class="pre">hw-rmkdn.Rmd</span></code> in the repo</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="setting-up-a-git-repo">
-<h2><span class="section-number">2.2. </span>Setting up a Git Repo<a class="headerlink" href="#setting-up-a-git-repo" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>See documentations at <a class="reference external" href="https://docs.github.com/">GitHub Docs</a>.</p></li>
-<li><p>Demonstration with homework template</p></li>
-</ul>
-</div>
-<div class="section" id="styles">
-<h2><span class="section-number">2.3. </span>Styles<a class="headerlink" href="#styles" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="programming">
-<h3><span class="section-number">2.3.1. </span>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Naming</p>
-<ul>
-<li><p>file/folder</p></li>
-<li><p>variables</p></li>
-<li><p>functions</p></li>
-<li><p>modules/packages</p></li>
-</ul>
-</li>
-<li><p>Spacing</p></li>
-<li><p>Indentation</p></li>
-</ul>
-<p>Google code recommendations:
-<a class="reference external" href="https://code.google.com/archive/p/soc/wikis/PythonStyleGuide.wiki">https://code.google.com/archive/p/soc/wikis/PythonStyleGuide.wiki</a></p>
-</div>
-<div class="section" id="git-repo">
-<h3><span class="section-number">2.3.2. </span>Git Repo<a class="headerlink" href="#git-repo" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Frequent commit (more snapshots)</p></li>
-<li><p>Informative message</p></li>
-<li><p>Keep it clean (no temporary or generated files)</p></li>
-<li><p>Make it reproducible (e.g., relative path)</p></li>
-</ul>
-</div>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="plotnine">
+<span id="id1"></span><h1><span class="section-number">6.4. </span>Plotnine<a class="headerlink" href="#plotnine" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>plotnine is an implementation of a grammar of graphics in Python, it is based on ggplot2. The grammar allows users to compose plots by explicitly mapping data to the visual objects that make up the plot. Plotting with a grammar is powerful, it makes custom (and otherwise complex) plots easy to think about and then create, while the simple plots remain simple.</p>
+</div></blockquote>
 </div>
 
     <script type="text/x-thebe-config">
@@ -477,17 +293,17 @@ See a tutorial of virtual environments at <a class="reference external" href="ht
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="cartopy.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Introduction</p>
+            <p class="prev-next-title"><span class="section-number">6.3. </span>Cartopy</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="refresh.html" title="next page">
+    <a class='right-next' id="next-link" href="exercises.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Python Refreshment</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Exercises</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
