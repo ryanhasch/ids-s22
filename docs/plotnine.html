@@ -411,6 +411,15 @@
 </div>
 </div>
 </div>
+<p>Alternatively, we can split one plot into multiple plots using facet_wrap.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">ggplot</span><span class="p">(</span><span class="n">nyc</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;hour&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">after_stat</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">)))</span>
+    <span class="o">+</span> <span class="n">geom_histogram</span><span class="p">(</span><span class="n">binwidth</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="o">+</span> <span class="n">facet_wrap</span><span class="p">(</span><span class="s2">&quot;BOROUGH&quot;</span><span class="p">)</span>
+    <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">&quot;Hourly Crash Count for each Borough&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="boxplot">
 <h2><span class="section-number">6.4.4. </span>Boxplot<a class="headerlink" href="#boxplot" title="Permalink to this headline">¶</a></h2>
