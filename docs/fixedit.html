@@ -264,6 +264,23 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modulenotfounderror-when-importing-cartopy-into-jupyter-notebook">
+   8.2. ModuleNotFoundError when importing Cartopy into Jupyter Notebook
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     8.2.1. Error in Question
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-enter-into-a-new-environment">
+     8.2.2. Solution: Enter into a new environment
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -297,6 +314,23 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#solution-upgrade-a-package">
      8.1.2. Solution: Upgrade a package
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modulenotfounderror-when-importing-cartopy-into-jupyter-notebook">
+   8.2. ModuleNotFoundError when importing Cartopy into Jupyter Notebook
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     8.2.1. Error in Question
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-enter-into-a-new-environment">
+     8.2.2. Solution: Enter into a new environment
     </a>
    </li>
   </ul>
@@ -342,6 +376,21 @@ following into the command line:</p>
 same. Then, run <code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">.</span></code> again and the book should build without
 error. This solution worked for me so hopefully it works for anyone
 else who runs into this error!</p>
+</div>
+</div>
+<div class="section" id="modulenotfounderror-when-importing-cartopy-into-jupyter-notebook">
+<h2><span class="section-number">8.2. </span>ModuleNotFoundError when importing Cartopy into Jupyter Notebook<a class="headerlink" href="#modulenotfounderror-when-importing-cartopy-into-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3><span class="section-number">8.2.1. </span>Error in Question<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes when importing Cartopy into jupyter notebook after installing it, we will have an error message:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ModuleNotFoundError: No module named &#39;cartopy&#39;
+</pre></div>
+</div>
+<p>This might be due to a conflict between different environments.</p>
+</div>
+<div class="section" id="solution-enter-into-a-new-environment">
+<h3><span class="section-number">8.2.2. </span>Solution: Enter into a new environment<a class="headerlink" href="#solution-enter-into-a-new-environment" title="Permalink to this headline">¶</a></h3>
+<p>The simplest way is to use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">base</span></code> to enter into the base environment of conda and reinstall Cartopy into that environment. (Use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">cartopy</span></code> instead of <code class="docutils literal notranslate"><span class="pre">pip</span></code>. <code class="docutils literal notranslate"><span class="pre">pip</span></code> won’t install all the required dependencies of Cartopy so it will be a mess.) Then you can launch Jupyter Notebook in that environment and hopefully Cartopy can be imported now.</p>
 </div>
 </div>
 </div>
