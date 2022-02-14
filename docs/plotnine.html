@@ -355,7 +355,7 @@
 </div>
 <div class="section" id="import-plotnine">
 <h2><span class="section-number">6.4.2. </span>Import Plotnine<a class="headerlink" href="#import-plotnine" title="Permalink to this headline">¶</a></h2>
-<p>First, we need to import pandas, numpy, and plotnine with the following code.</p>
+<p>First, we need to import pandas, numpy, and plotnine with the following code. We also need to read the actual data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -369,10 +369,11 @@
 </div>
 </div>
 </div>
+<p>It is easy to add elements of a plot with plotnine. We can write each necessary function one by one with a ‘+’ sign.</p>
 </div>
 <div class="section" id="histograms">
 <h2><span class="section-number">6.4.3. </span>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h2>
-<p>With plotnine, we can create histogram plots. We can change how the count is visualized. By default it is the raw count, but it can be set to ncount (raw count normalized to 1), density, proportion (width*density), and percent_format.</p>
+<p>With plotnine, we can create histogram plots. We can change how the count is visualized. By default it is the raw count, but it can be set to ncount (raw count normalized to 1), density, proportion (width*density), and percent_format. We must set either binwidth or the number of bins.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nyc</span><span class="p">[</span><span class="s1">&#39;hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nyc</span><span class="p">[</span><span class="s1">&#39;CRASH TIME&#39;</span><span class="p">]]</span>
@@ -386,13 +387,13 @@
 </div>
 </div>
 </div>
-<p>We can easily add multiple plots. Here we add a plot of the same data with wider bins. We can make the histograms transparent with alpha.</p>
+<p>We can easily add multiple plots. Here we add a plot of the same data with wider bins. We can make the histograms transparent with alpha. We can also set the color of the plot with fill.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
     <span class="n">ggplot</span><span class="p">(</span><span class="n">nyc</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;hour&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">after_stat</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">)))</span>
-    <span class="o">+</span> <span class="n">geom_histogram</span><span class="p">(</span><span class="n">binwidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
     <span class="o">+</span> <span class="n">geom_histogram</span><span class="p">(</span><span class="n">binwidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
+    <span class="o">+</span> <span class="n">geom_histogram</span><span class="p">(</span><span class="n">binwidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
     <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">&quot;Hourly and Bihourly Crash Count&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
@@ -412,6 +413,8 @@
 </div>
 </div>
 <p>Alternatively, we can split one plot into multiple plots using facet_wrap.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
     <span class="n">ggplot</span><span class="p">(</span><span class="n">nyc</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;hour&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">after_stat</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">)))</span>
     <span class="o">+</span> <span class="n">geom_histogram</span><span class="p">(</span><span class="n">binwidth</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
@@ -421,14 +424,17 @@
 </pre></div>
 </div>
 </div>
+</div>
+</div>
 <div class="section" id="boxplot">
 <h2><span class="section-number">6.4.4. </span>Boxplot<a class="headerlink" href="#boxplot" title="Permalink to this headline">¶</a></h2>
-<p>We can make boxplots with plotnine very easily.</p>
+<p>We can make boxplots with plotnine very easily. In this example, we adjust the angle of the x labels so that they do not overlap.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-    <span class="n">ggplot</span><span class="p">(</span><span class="n">nyc</span><span class="p">)</span>
-    <span class="o">+</span> <span class="n">geom_boxplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;BOROUGH&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;NUMBER OF PERSONS INJURED&#39;</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">theme_update</span><span class="p">(</span><span class="n">axis_text_x</span> <span class="o">=</span> <span class="n">element_text</span><span class="p">(</span><span class="n">angle</span> <span class="o">=</span> <span class="mi">45</span><span class="p">))</span>
+<span class="p">(</span>
+    <span class="n">ggplot</span><span class="p">(</span><span class="n">nyc</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;BOROUGH&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;NUMBER OF PERSONS INJURED&#39;</span><span class="p">))</span>
+    <span class="o">+</span> <span class="n">geom_boxplot</span><span class="p">()</span>
     <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">&quot;Boxplot of # of Persons Injured for each Borough&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
@@ -441,10 +447,31 @@
 <p>Violin plots are similar to boxplots, but they also display the density for the numeric data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">nyc</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="s1">&#39;BOROUGH&#39;</span><span class="p">,</span> <span class="s1">&#39;NUMBER OF PERSONS KILLED&#39;</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">theme_set</span><span class="p">(</span><span class="n">theme_xkcd</span><span class="p">)</span>
+<span class="n">theme_update</span><span class="p">(</span><span class="n">figure_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="p">(</span>
+  <span class="n">ggplot</span><span class="p">(</span><span class="n">nyc</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;BOROUGH&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;NUMBER OF PERSONS KILLED&#39;</span><span class="p">))</span>
   <span class="o">+</span> <span class="n">geom_violin</span><span class="p">(</span><span class="n">nyc</span><span class="p">)</span>
   <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also make time series with plotnine. In our example we need to group the data by day and borough, and then reset the index to use both as a column variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">theme_set</span><span class="p">(</span><span class="n">theme_classic</span><span class="p">)</span>
+<span class="n">nyc</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nyc</span><span class="p">[</span><span class="s1">&#39;CRASH DATE&#39;</span><span class="p">]]</span>
+<span class="n">nyc</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nyc</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]]</span>
+<span class="n">daily_counts</span> <span class="o">=</span> <span class="n">nyc</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="s1">&#39;BOROUGH&#39;</span><span class="p">])[</span><span class="s1">&#39;BOROUGH&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">daily_counts</span> <span class="o">=</span> <span class="n">daily_counts</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;counts&#39;</span><span class="p">)</span>
+
+<span class="p">(</span>
+    <span class="n">ggplot</span><span class="p">(</span><span class="n">daily_counts</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;counts&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;BOROUGH&quot;</span><span class="p">))</span>
+<span class="c1">#     + geom_histogram(binwidth = 1, bins = 24)</span>
+    <span class="o">+</span> <span class="n">geom_line</span><span class="p">()</span>
+    <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">&quot;Daily Crash Count for Each Borough&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -456,7 +483,8 @@
 <p>With geom_point, we can make a simple scatter plot of our data. We can set LONGITUDE as X, LATITUDE as y, and we can color each point by BOROUGH. We can also set alpha so that we can visualize the density of the points.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">nyc</span><span class="p">[</span><span class="n">nyc</span><span class="o">.</span><span class="n">LONGITUDE</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">theme_update</span><span class="p">(</span><span class="n">figure_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>  
+  <span class="n">nyc</span><span class="p">[</span><span class="n">nyc</span><span class="o">.</span><span class="n">LONGITUDE</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
   <span class="n">nyc_plot</span> <span class="o">=</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">nyc</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;LONGITUDE&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;LATITUDE&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;BOROUGH&#39;</span><span class="p">))</span>
   <span class="n">nyc_plot</span> <span class="o">+</span> <span class="n">geom_point</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">&quot;Coordinates of Car Crashes&quot;</span><span class="p">)</span>
 </pre></div>
