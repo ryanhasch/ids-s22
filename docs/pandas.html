@@ -277,6 +277,13 @@
   <a class="reference internal nav-link" href="#combining">
    5.6. Combining
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aggregation">
+     5.6.1. Aggregation
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -327,6 +334,13 @@
   <a class="reference internal nav-link" href="#combining">
    5.6. Combining
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aggregation">
+     5.6.1. Aggregation
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -832,8 +846,9 @@ for a first check.</p>
 <p>Selection by row:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">brooklyn_crash</span> <span class="o">=</span> <span class="n">nyc_crash</span><span class="p">[</span><span class="n">nyc_crash</span><span class="p">[</span><span class="s2">&quot;BOROUGH&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;BROOKLYN&quot;</span><span class="p">]</span>
-<span class="n">bronx_crash</span>    <span class="o">=</span> <span class="n">nyc_crash</span><span class="p">[</span><span class="n">nyc_crash</span><span class="p">[</span><span class="s2">&quot;BOROUGH&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;BRONX&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">brooklyn_crash</span> <span class="o">=</span> <span class="n">nyc_crash</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">nyc_crash</span><span class="p">[</span><span class="s2">&quot;BOROUGH&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;BROOKLYN&quot;</span><span class="p">]</span>
+
+<span class="n">bronx_crash</span>    <span class="o">=</span> <span class="n">nyc_crash</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">nyc_crash</span><span class="p">[</span><span class="s2">&quot;BOROUGH&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;BRONX&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -932,7 +947,11 @@ for a first check.</p>
 <p>By both</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bronx_crash</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bronx_long</span> <span class="o">=</span> <span class="n">nyc_crash</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">nyc_crash</span><span class="p">[</span><span class="s1">&#39;BOROUGH&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;BRONX&#39;</span><span class="p">,</span>
+                           <span class="p">[</span><span class="s2">&quot;CRASH DATE&quot;</span><span class="p">,</span> <span class="s2">&quot;CRASH TIME&quot;</span><span class="p">,</span> <span class="s2">&quot;LONGITUDE&quot;</span><span class="p">]]</span>
+<span class="n">bronx_lat</span>  <span class="o">=</span> <span class="n">nyc_crash</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">nyc_crash</span><span class="p">[</span><span class="s1">&#39;BOROUGH&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;BRONX&#39;</span><span class="p">,</span>
+                           <span class="p">[</span><span class="s2">&quot;CRASH DATE&quot;</span><span class="p">,</span> <span class="s2">&quot;CRASH TIME&quot;</span><span class="p">,</span> <span class="s2">&quot;LATITUDE&quot;</span><span class="p">]]</span>
+<span class="n">bronx_lat</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -957,6 +976,7 @@ for a first check.</p>
       <th></th>
       <th>CRASH DATE</th>
       <th>CRASH TIME</th>
+      <th>LATITUDE</th>
     </tr>
   </thead>
   <tbody>
@@ -964,46 +984,31 @@ for a first check.</p>
       <th>10</th>
       <td>01/01/2022</td>
       <td>16:40</td>
+      <td>40.806107</td>
     </tr>
     <tr>
       <th>18</th>
       <td>01/01/2022</td>
       <td>15:19</td>
+      <td>40.833750</td>
     </tr>
     <tr>
       <th>19</th>
       <td>01/01/2022</td>
       <td>15:00</td>
+      <td>40.858790</td>
     </tr>
     <tr>
       <th>22</th>
       <td>01/01/2022</td>
       <td>18:21</td>
+      <td>40.890648</td>
     </tr>
     <tr>
       <th>29</th>
       <td>01/01/2022</td>
       <td>1:50</td>
-    </tr>
-    <tr>
-      <th>55</th>
-      <td>01/01/2022</td>
-      <td>22:45</td>
-    </tr>
-    <tr>
-      <th>76</th>
-      <td>01/01/2022</td>
-      <td>0:45</td>
-    </tr>
-    <tr>
-      <th>79</th>
-      <td>01/01/2022</td>
-      <td>5:55</td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>01/01/2022</td>
-      <td>9:21</td>
+      <td>40.895718</td>
     </tr>
   </tbody>
 </table>
@@ -1019,15 +1024,17 @@ for a first check.</p>
 <span class="n">nyc_crash</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">nyc_crash</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]]</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nyc_crash</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nyc_crash</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 666.,  326.,  453., 1109.,  682.,  690., 1371.,  898.,  666.,
-         798.]),
- array([ 0. ,  2.3,  4.6,  6.9,  9.2, 11.5, 13.8, 16.1, 18.4, 20.7, 23. ]),
- &lt;BarContainer object of 10 artists&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([330., 164., 172., 131., 195., 186., 267., 304., 460., 345., 329.,
+        353., 357., 333., 451., 473., 447., 468., 430., 360., 306., 270.,
+        528.]),
+ array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+        17, 18, 19, 20, 21, 22, 23]),
+ &lt;BarContainer object of 23 artists&gt;)
 </pre></div>
 </div>
 <img alt="../_images/pandas_17_1.png" src="../_images/pandas_17_1.png" />
@@ -1472,7 +1479,7 @@ for a first check.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1820/939351689.py:1: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1927/939351689.py:1: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
   bronx_crash.append(brooklyn_crash).tail(5)
 </pre></div>
 </div>
@@ -1644,6 +1651,241 @@ for a first check.</p>
 </div></div></div>
 </div>
 <p>Column bind</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mybronx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">bronx_lat</span><span class="p">,</span> <span class="n">bronx_long</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bronx_lat</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(948, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bronx_long</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(948, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="aggregation">
+<h3><span class="section-number">5.6.1. </span>Aggregation<a class="headerlink" href="#aggregation" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mybronx</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CRASH DATE</th>
+      <th>CRASH TIME</th>
+      <th>LATITUDE</th>
+      <th>LONGITUDE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>01/01/2022</td>
+      <td>16:40</td>
+      <td>40.806107</td>
+      <td>-73.917990</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>01/01/2022</td>
+      <td>15:19</td>
+      <td>40.833750</td>
+      <td>-73.900490</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>01/01/2022</td>
+      <td>15:00</td>
+      <td>40.858790</td>
+      <td>-73.907364</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>01/01/2022</td>
+      <td>15:00</td>
+      <td>40.858790</td>
+      <td>-73.919550</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>01/01/2022</td>
+      <td>15:00</td>
+      <td>40.816550</td>
+      <td>-73.907364</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1044</th>
+      <td>01/31/2022</td>
+      <td>15:00</td>
+      <td>40.886295</td>
+      <td>-73.847916</td>
+    </tr>
+    <tr>
+      <th>1045</th>
+      <td>01/31/2022</td>
+      <td>10:32</td>
+      <td>40.819336</td>
+      <td>-73.913700</td>
+    </tr>
+    <tr>
+      <th>1046</th>
+      <td>01/31/2022</td>
+      <td>16:00</td>
+      <td>40.815937</td>
+      <td>-73.909134</td>
+    </tr>
+    <tr>
+      <th>1048</th>
+      <td>01/31/2022</td>
+      <td>14:58</td>
+      <td>40.868847</td>
+      <td>-73.902626</td>
+    </tr>
+    <tr>
+      <th>1049</th>
+      <td>01/31/2022</td>
+      <td>6:50</td>
+      <td>40.851097</td>
+      <td>-73.892810</td>
+    </tr>
+  </tbody>
+</table>
+<p>1016 rows × 4 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mybronx</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;CRASH DATE&#39;</span><span class="p">)[</span><span class="s2">&quot;LATITUDE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CRASH DATE
+01/01/2022    40.837643
+01/02/2022    40.859297
+01/03/2022    40.837574
+01/04/2022    40.831024
+01/05/2022    40.865475
+01/06/2022    40.830143
+01/07/2022    40.840114
+01/08/2022    40.844177
+01/09/2022    40.843715
+01/10/2022    40.857130
+01/11/2022    40.842747
+01/12/2022    40.854292
+01/13/2022    40.850704
+01/14/2022    40.847494
+01/15/2022    40.845562
+01/16/2022    40.846600
+01/17/2022    40.865258
+01/18/2022    40.833218
+01/19/2022    40.850893
+01/20/2022    40.841927
+01/21/2022    40.836138
+01/22/2022    40.859184
+01/23/2022    40.859430
+01/24/2022    40.826973
+01/25/2022    40.841188
+01/26/2022    40.842854
+01/27/2022    40.847794
+01/28/2022    40.847680
+01/29/2022    40.859306
+01/30/2022    40.843916
+01/31/2022    40.841087
+Name: LATITUDE, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span> <span class="ow">in</span> <span class="n">mybronx</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;CRASH DATE&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:12s}</span><span class="s2"> shape = </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">group</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>01/01/2022   shape = (36, 4)
+01/02/2022   shape = (19, 4)
+01/03/2022   shape = (26, 4)
+01/04/2022   shape = (29, 4)
+01/05/2022   shape = (47, 4)
+01/06/2022   shape = (36, 4)
+01/07/2022   shape = (54, 4)
+01/08/2022   shape = (36, 4)
+01/09/2022   shape = (26, 4)
+01/10/2022   shape = (28, 4)
+01/11/2022   shape = (32, 4)
+01/12/2022   shape = (34, 4)
+01/13/2022   shape = (33, 4)
+01/14/2022   shape = (28, 4)
+01/15/2022   shape = (42, 4)
+01/16/2022   shape = (24, 4)
+01/17/2022   shape = (27, 4)
+01/18/2022   shape = (34, 4)
+01/19/2022   shape = (29, 4)
+01/20/2022   shape = (28, 4)
+01/21/2022   shape = (32, 4)
+01/22/2022   shape = (33, 4)
+01/23/2022   shape = (24, 4)
+01/24/2022   shape = (24, 4)
+01/25/2022   shape = (21, 4)
+01/26/2022   shape = (50, 4)
+01/27/2022   shape = (35, 4)
+01/28/2022   shape = (59, 4)
+01/29/2022   shape = (60, 4)
+01/30/2022   shape = (24, 4)
+01/31/2022   shape = (40, 4)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 

@@ -362,7 +362,13 @@
 <p>Cartopy is a python library that can be used in combination with matplotlib to create geographical maps.</p>
 <p>Starting in 2016, The Cartopy Project began development as a replacement for Basemap.</p>
 <p>Cartopy has 28 people listed as contributors.</p>
-<p>To install cartopy use either <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">cartopy</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cartopy</span></code> depending on your python setup.</p>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">conda</span></code>,  cartopy can be installed with
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">cartopy</span></code>, which takes care of the
+dependencies such as <code class="docutils literal notranslate"><span class="pre">proj</span></code>, <code class="docutils literal notranslate"><span class="pre">geos</span></code>, <code class="docutils literal notranslate"><span class="pre">pyshp</span></code>, <code class="docutils literal notranslate"><span class="pre">shapely</span></code>, etc.</p>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">pip</span></code>, the system dependencies need to be installed first
+before running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cartopy</span></code>. See
+<a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/installing.html">https://scitools.org.uk/cartopy/docs/latest/installing.html</a>
+for detailed instructions.</p>
 <p>Pros of Cartopy:</p>
 <ul class="simple">
 <li><p>Relatively easy to learn</p></li>
