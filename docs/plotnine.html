@@ -460,9 +460,10 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">theme_set</span><span class="p">(</span><span class="n">theme_xkcd</span><span class="p">)</span>
 <span class="n">theme_update</span><span class="p">(</span><span class="n">figure_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="p">(</span>
-  <span class="n">ggplot</span><span class="p">(</span><span class="n">nyc</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;BOROUGH&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;NUMBER OF PERSONS KILLED&#39;</span><span class="p">))</span>
+  <span class="n">ggplot</span><span class="p">(</span><span class="n">nyc</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;BOROUGH&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;NUMBER OF PERSONS INJURED&#39;</span><span class="p">))</span>
   <span class="o">+</span> <span class="n">geom_violin</span><span class="p">(</span><span class="n">nyc</span><span class="p">)</span>
   <span class="o">+</span> <span class="n">geom_point</span><span class="p">()</span>
+  <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">&quot;Boxplot of # of Persons Injured for each Borough&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
