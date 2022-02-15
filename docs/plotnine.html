@@ -482,7 +482,6 @@
 
 <span class="p">(</span>
     <span class="n">ggplot</span><span class="p">(</span><span class="n">daily_counts</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;counts&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;BOROUGH&quot;</span><span class="p">))</span>
-<span class="c1">#     + geom_histogram(binwidth = 1, bins = 24)</span>
     <span class="o">+</span> <span class="n">geom_line</span><span class="p">()</span>
     <span class="o">+</span> <span class="n">ggtitle</span><span class="p">(</span><span class="s2">&quot;Daily Crash Count for Each Borough&quot;</span><span class="p">)</span>
 <span class="p">)</span>
